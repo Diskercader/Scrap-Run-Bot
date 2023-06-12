@@ -7,8 +7,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 
-intents = discord.Intents.default()
-intents.message_content = True
+intents = discord.Intents.all()
+# intents.message_content = True
 
 #Create our Discord bot object to interact with API
 client = discord.Client(intents=intents)
@@ -32,7 +32,7 @@ programArgs = dict.fromkeys(["maxBolts", "maxGangBolts", "numHours", "endTime", 
 serverComms = {
     "whiteListChannels": [720470055401291799, 314258703370944523, 782419338212147201, 636684529796382720],
                     #Bot-helpers (SP), #Bot-commands (Cats), #Scrap-run-bot-test, CATS main testing
-    "whiteListAdmins": [299335413229944833, 260834727865483264],
+    "whiteListAdmins": [299335413229944833, 260834727865483264, 417098541950042122],
                        #Diskercader,        Oops
     "whiteListPrefix": [".", "$", ".", "$"],
     "userList": []
