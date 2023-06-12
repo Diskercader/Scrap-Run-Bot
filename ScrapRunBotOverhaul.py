@@ -7,8 +7,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 
+intents = discord.Intents.default()
+intents.message_content = True
+
 #Create our Discord bot object to interact with API
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 #Quick helper method to help with program arg creation
 def readFullFile(fileName):
@@ -618,4 +621,4 @@ async def on_message(message):
     searchNewUser(message.author.id)
     await message.channel.send(botResponse)
 
-client.run(tokens["REAL_TOKEN"])
+client.run(tokens["PROD"])
